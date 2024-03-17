@@ -5,12 +5,14 @@ import css from "./App.module.css";
 
 export const App = () => {
   return (
-    <div className={css.container}>
-      <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <SearchBox />
-      <ContactList />
+    <div className={css.font}>
+      <div className={css.container}>
+        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Phonebook</h1>
+        <ContactForm />
+        <h2>Contacts</h2>
+        <SearchBox />
+        <ContactList />
+      </div>
     </div>
   );
 };
