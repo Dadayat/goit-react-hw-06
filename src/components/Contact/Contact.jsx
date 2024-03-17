@@ -1,7 +1,10 @@
 import css from "./Contact.module.css";
 import { IoPersonCircleSharp } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 
-export const Contact = ({ item: { name, number, id }, onDelete }) => {
+export const Contact = ({ item: { name, number, id } }) => {
+  const dispatch = useDispatch();
   return (
     <div className={css.contactsList}>
       <div className={css.contact}>
@@ -11,7 +14,10 @@ export const Contact = ({ item: { name, number, id }, onDelete }) => {
 
       <div className={css.contactCard}>
         <p>{number}</p>
-        <button className={css.delContactBtn} onClick={() => onDelete(id)}>
+        <button
+          className={css.delContactBtn}
+          onClick={() => dispatch(deleteContact(id))}
+        >
           Delete
         </button>
       </div>
